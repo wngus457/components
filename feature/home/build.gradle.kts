@@ -3,11 +3,10 @@ plugins {
     id(Plugins.kotlinAndroid)
     id(Plugins.ksp)
     id(Plugins.kotlinParcelize)
-    kotlin(Plugins.serialization) version Kotlin.version
 }
 
 android {
-    namespace = AppConfig.NameSpace.utilAndroid
+    namespace = AppConfig.NameSpace.home
     compileSdk = AppConfig.compileSdk
 
     defaultConfig {
@@ -33,9 +32,11 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
+
     buildFeatures {
         compose = true
     }
+
     composeOptions {
         kotlinCompilerExtensionVersion = Compose.composeVersion
     }
@@ -55,6 +56,9 @@ dependencies {
     implementation(project(Modules.coreMvi))
     implementation(project(Modules.uiCommon))
     implementation(project(Modules.utilKotlin))
+    implementation(project(Modules.utilAndroid))
+    implementation(project(Modules.uiSystem))
+
 
     implementation(Java.javaxInject)
 
@@ -70,20 +74,13 @@ dependencies {
     implementation(Compose.coilCore)
     implementation(Compose.coilCompose)
 
+    implementation(Compose.accompanistPermission)
+    
     implementation(Compose.navigationAnimation)
 
     implementation(DaggerHilt.hiltAndroid)
     ksp(DaggerHilt.hiltAndroidCompiler)
     implementation(Compose.hiltNavigation)
-
-    implementation(Util.Jetpack.coreKtx)
-    implementation(Util.Jetpack.activityCompose)
-    implementation(Util.Jetpack.activityKtx)
-    implementation(Util.Jetpack.recyclerview)
-    implementation(Util.Jetpack.appcompat)
-
-    implementation(Util.zxing)
-    implementation(Util.zxingCore)
 
     implementation(Kotlin.serialization)
 }

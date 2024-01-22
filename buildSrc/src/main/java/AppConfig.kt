@@ -7,6 +7,7 @@ object AppConfig {
     const val versionName = "1.0.0"
 
     object NameSpace {
+        const val home = "com.juhyeon.components.feature.home"
 
         const val utilAndroid = "com.juhyeon.components.shared.util.android"
         const val utilKotlin = "com.juhyeon.components.shared.util.kotlin"
