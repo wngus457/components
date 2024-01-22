@@ -60,6 +60,11 @@ android {
 
 dependencies {
     implementation(project(Modules.coreMvi))
+    implementation(project(Modules.domain))
+    implementation(project(Modules.utilKotlin))
+    implementation(project(Modules.utilAndroid))
+    implementation(project(Modules.uiCommon))
+    implementation(project(Modules.uiSystem))
 
     implementation(platform(Compose.bom))
     implementation(Compose.ui)
